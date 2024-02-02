@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+  {% for album in records %}
+      <header>
+        <div>
+            <img src="{{ album.artworkURL }}">
+            <p>{{ album.artist }} - {{ album.title }}</p>
+        </div>
+      </header>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
+</body>
+</html>

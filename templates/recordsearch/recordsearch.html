@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}recordsearch{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="query">Query</label>
+    <input name="query" id="query" required>
+    <input type="submit" value="search">
+  </form>
+    {% for album in records  %}
+    <album class="album">
+    <img src="{{ album[artworkURL]}}">
+    </album>
+    {% endfor %}
+{% endblock %}
